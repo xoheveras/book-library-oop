@@ -26,11 +26,7 @@ class ConsoleApp:
         try:
             book = Book(name, author, year)
             result = book.insert_ilbrary(self.db)
-
-            if result:
-                print(Fore.GREEN + f"\n[+] Book add to library\n")
-            else:
-                print(Fore.GREEN + f"\n[-] Book don`t add library\n")
+            print(Fore.GREEN + f"\n[+] Book add to library\n")
 
         except IsEmptyString as error:
             print(Fore.RED + f"\n[X] {error}\n")

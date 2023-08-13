@@ -14,15 +14,13 @@ class SQLiteDatabase:
         self.conn = None
 
         self.execute("""
-
                     CREATE TABLE IF NOT EXISTS library(
                         id INTEGER PRIMARY KEY AUTOINCREMENT, 
                         name VARCHAR(80),
                         author VARCHAR(80),
                         year INTEGER
                     )
-
-                     """)
+                    """)
 
     def connect(self) -> None:
         """ Establishing a connection to the database """

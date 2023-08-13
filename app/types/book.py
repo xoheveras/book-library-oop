@@ -36,16 +36,13 @@ class Book():
                 raise IsTextSizeExceed("Field text is limited to 80 characters, do not exceed the limit")
 
     def insert_ilbrary(self, db) -> bool:
-        result = db.execute(
-                    """
-                    INSERT INTO library(name, author, year) VALUES(?,?,?)
-                    """,
-                    (
-                        self._name,
-                        self._author,
-                        self._year
-                    )
-                )
+        query = "INSERT INTO library(name, author, year) VALUES(?,?,?)"
+        params = (
+            self._name,
+            self._author,
+            self._year
+        )
+        result = db.execute(query, params)
         if result:
             return True
         else:
